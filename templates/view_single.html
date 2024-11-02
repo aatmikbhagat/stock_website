@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}
+{{stock.ticker}}
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm {{ stock.change_color }}">
+            <div class="card-body">
+                <h5 class="card-title">{{stock.ticker}}</h5>
+                <p class="card-text price">Price: ${{stock.price}}</p>
+                <p class="card-text">Change: {{stock.change}}%</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

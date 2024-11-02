@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}
+Welcome to Stock Tracker
+{% endblock %}
+{% block content %}
+
+<section class="hero bg-dark text-white text-center py-5 animate__animated animate__fadeIn">
+    <div class="container">
+        <h1 class="display-4">Track Your Favorite Stocks in Real-Time</h1>
+        <p class="lead">Join us to get the latest updates on your custom stock watchlists and track the market effortlessly.</p>
+        <a href="/login" class="btn btn-primary btn-lg mt-3 hover-effect">Login Now!</a>
+        <a href="/createUser" class="btn btn-primary btn-lg mt-3 hover-effect">Get Started</a>
+    </div>
+</section>
+
+<section class="features py-5 text-center">
+    <div class="container">
+        <h2 class="mb-5 animate__animated animate__fadeInUp">Why Choose Stock Tracker?</h2>
+        <div class="row">
+            <div class="col-md-4 animate__animated animate__zoomIn">
+                <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+                <h4>Real-time Updates</h4>
+                <p>Stay updated with live stock prices and fluctuations.</p>
+            </div>
+            <div class="col-md-4 animate__animated animate__zoomIn animate__delay-1s">
+                <i class="fas fa-user-cog fa-3x text-primary mb-3"></i>
+                <h4>Custom Watchlists</h4>
+                <p>Track your personalized stock lists effortlessly.</p>
+            </div>
+            <div class="col-md-4 animate__animated animate__zoomIn animate__delay-2s">
+                <i class="fas fa-history fa-3x text-primary mb-3"></i>
+                <h4>Historical Data</h4>
+                <p>Access detailed historical data for all tracked stocks.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="view-ticker py-5 text-center">
+    <div class="container">
+        <h2 class="mb-5 animate_animated animate__fadeInUp">Enter Stock to View</h2>
+        <form action="#" method="post" class="mb-4">
+            <div class="form-group">
+                <label for="stockInput">Enter Stock to Add to Portfolio</label>
+                <input type="text" name="tkr" id="stockInput" class="form-control" placeholder="Enter Stock Ticker">
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+
+    </div>
+</section>
+<section class="stock-preview py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Popular Stocks</h2>
+        <div class="row">
+            {% for stock in popular_stocks %}
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm {{ stock.change_color }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ stock.ticker }}</h5>
+                        <p class="card-text">Price: {{ stock.price }}</p>
+                        <p class="card-text">Change: {{ stock.change }} ({{ stock.change_percent }}%)</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<footer class="bg-dark text-white py-4 text-center">
+    <div class="container">
+        <p>&copy; 2024 Stock Tracker | Powered by Flask</p>
+    </div>
+</footer>
+
+{% endblock %}

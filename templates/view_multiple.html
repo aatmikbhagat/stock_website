@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}
+View Multiple Stocks
+{% endblock %}
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="alert alert-info" role="alert">
+                {% for msg in messages %}
+                    {{msg}}
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <form action="#" method="post" class="mb-4">
+        <div class="form-group">
+            <label for="stockInput">Enter Stock to Add to Portfolio</label>
+            <input type="text" name="tkr" id="stockInput" class="form-control" placeholder="Enter Stock Ticker">
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+
+    <!-- Display Multiple Stocks -->
+    <div class="row">
+        {% for stock in stocks %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{stock.ticker}}</h5>
+                    <p class="card-text price">Price: ${{stock.price}}</p>
+                    <p class="card-text {{stock.change_color}}">Change: {{stock.change}}%</p>
+                    <form action="{{ url_for('remove_stock') }}" method="POST" >
+                        <input type="hidden" name="tkr" value="{{stock.ticker}}">
+                        <button type="submit" class="btn btn-danger">Remove</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

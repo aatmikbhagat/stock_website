@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}
+Login Page
+{% endblock %}
+{% block content %}
+<section class="hero bg-dark text-white text-center py-5 animate__animated animate__fadeIn">
+    <div class="container">
+        <h1 class="display-4">Login to Your Account to Take Advantage of Tracking Stocks Now</h1>
+        <p class="lead">Join us to get the latest updates on your custom stock watchlists and track the market effortlessly.</p>
+    </div>
+</section>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="alert alert-info" role="alert">
+                {% for msg in messages %}
+                    {{msg}}
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+    <form action="#" method="Post" class="mb-4">
+        <div class="form-group">
+            <label for="userInput">Enter ID:</label>
+            <input type="text" name="loginId" class="form-control" placeholder="Enter Username">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+{% endblock %}

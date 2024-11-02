@@ -1,0 +1,123 @@
+div.stock-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.lit_pos {
+    background-color: #d4edda; /* Light green */
+    border-color: #c3e6cb;
+    color: #155724; /* Dark green text */
+}
+
+/* Positive change (large) */
+.very_pos {
+    background-color: #28a745; /* Darker green */
+    border-color: #28a745;
+    color: #ffffff; /* White text */
+}
+
+/* Negative change (small) */
+.lit_neg {
+    background-color: #f8d7da; /* Light red */
+    border-color: #f5c6cb;
+    color: #721c24; /* Dark red text */
+}
+
+/* Negative change (large) */
+.very_neg {
+    background-color: #dc3545; /* Dark red */
+    border-color: #dc3545;
+    color: #ffffff; /* White text */
+}
+
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; 
+    transform: scale(1.05); 
+}
+
+.hover-card {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.hover-card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+
+body {
+    background-color: #f0f0f0; /* Light grey background */
+    color: #333; /* Dark grey text for readability */
+    padding-top: 70px; /* Space for fixed navbar */
+}
+
+.navbar {
+    background-color: #212529; /* Black navbar */
+    z-index: 1030; /* Ensure navbar stays on top */
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar-brand, .nav-link {
+    color: #f8f9fa !important; /* Light grey text */
+}
+
+.navbar-toggler-icon {
+    background-color: white; /* Make the toggle icon visible */
+}
+
+/* Cards for modern look */
+.card {
+    border: none; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; /
+}
+
+.btn-primary {
+    background-color: #343a40;
+    border-color: #343a40;
+    transition: background-color 0.3s ease; 
+}
+.btn-primary:hover {
+    background-color: #495057; 
+    border-color: #495057;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333; 
+    border-color: #bd2130;
+}
+
+/* Flash message styling */
+.alert-info {
+    background-color: #e9ecef; 
+    color: #333; 
+}
+
+.form-control {
+    border-radius: 6px; 
+    border: 1px solid #ced4da; 
+}
+
+.container-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+}
