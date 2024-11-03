@@ -320,4 +320,3 @@ if __name__ == "__main__":
         print("Tables created successfully.")
     app.run(debug=True)
     
-print("HELLO")
