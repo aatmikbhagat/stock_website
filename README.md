@@ -24,8 +24,8 @@ A responsive web application built with **Flask**, **YFinance**, and **SQLite** 
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/aatmikbhagat/stock_website.git
+cd stock_website
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
